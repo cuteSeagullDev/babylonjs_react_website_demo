@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+header {
+    top: 0;
+    left: 0;
+    padding: 0 50px;
+    width: 100%;
+    font-size: 1.3rem;
+    font-family: "Ubuntu",  sans-serif;
+    box-sizing: border-box;
+    position: fixed; 
+    background-color: #1C002C;
+}
+
+header .logo {
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    color: white;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+}
+
+header nav ul li ul {
+    position: absolute;
+    left: 0;
+    display: none;
+    width: 100%;
+}
+
+header nav ul li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-button {
+    display: none;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (min-width: 992px){
+    header nav ul li:hover {
+        background: #065358;
+        border-radius: 5px;
+    }
+    
+    header nav ul li:hover > ul {
+        display: block;
+        background:#065358;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    
+    header nav ul li a:hover {
+        background: #098087;
+        border-radius: 5px;
+        text-shadow: 0px 0px 2px #d338b7, -2px -2px 3px #d338b7;
+    }
+}
+
+
+@media (max-width: 991px){
+
+    header {
+        padding: 0 20px;
+        /* background:black; */
+    }
+    
+    .menu-button {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        height: calc(100vh-50px);
+        top: 50px;
+        left: -100%;
+        transition: 0.5;
+    }
+
+    .navbar.active {
+        display: block;
+        left: 0;
+    }
+    
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    header nav ul li.active {
+        display: block;
+        background: #09254c;
+        text-shadow: 0px 0px 2px #d338b7, -2px -2px 3px #d338b7;
+    }
+
+    header nav ul li.active ul {
+        position: relative;
+        display: block;
+        background: #098087;
+    }
+
+    header nav ul li ul li {
+        width: 100%;
+    }
+
+}
