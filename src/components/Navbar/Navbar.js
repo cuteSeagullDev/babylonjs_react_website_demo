@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "./Navbar.css";
 
 export default function Navbar (){
@@ -15,32 +16,30 @@ export default function Navbar (){
     }
 
     return (
+            <header>
+                <div className="logo">Logo</div>
 
-        <header>
-            <div className="logo">Logo</div>
+                <div className="menu-button" onClick={toggleNavHandler}>
+                    {isNav ? 
+                    <span>&#10005;</span> : 
+                    <span>&#9776;</span>}
+                </div>
 
-            <div className="menu-button" onClick={toggleNavHandler}>
-                {isNav ? 
-                <span>&#10005;</span> : 
-                <span>&#9776;</span>}
-            </div>
-
-            <nav className={isNav ? "navbar active" : "navbar"}>
-                <ul>
-                    <li>Home</li>
-                    <li className={isSubmenu1 ? "submenu active" : "submenu"} onClick={submenu1Handler}>
-                        Store
-                        <ul>
-                            <li>Item1</li>
-                            <li>Item2</li>
-                        </ul>
-                    </li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-
-        </header>
+                <nav className={isNav ? "navbar active" : "navbar"}>
+                    <ul>
+                        <li>Home</li>
+                        <li className={isSubmenu1 ? "submenu active" : "submenu"} onClick={submenu1Handler}>
+                            Store
+                            <ul>
+                                <li>Item1</li>
+                                <li>Item2</li>
+                            </ul>
+                        </li>
+                        <li>Game</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </header>
 
     )
 }

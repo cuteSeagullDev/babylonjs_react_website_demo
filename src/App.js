@@ -1,20 +1,24 @@
 import React from 'react';
-import "App.css";
 import Nav from './components/Navbar/Navbar';
-import SceneComponent from './components/SceneComponent/SceneComponent';
-import { onSceneReady, onRender } from './components/SampleBabylonScene/SampleBabylonScene';
+import Home from "./pages/Home";
+import Store from "./pages/Store";
+import Game from "./pages/Game";
+import Contact from "./pages/Contact";
+import 'App.css';
 
-const App = () => (
+function App() {
 
-    <>
-        <Nav />
-        <div id="main">
-            <SceneComponent antialias onSceneReady={onSceneReady} onRender={onRender} id='my-canvas' />
-        </div>
+    return (
+        <>
+            <Nav />
+            <Home />
+        </>
+    )
 
-    </>
 
-)
+}
+
+
 
 
 export default App;
