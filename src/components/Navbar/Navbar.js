@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar (){
@@ -17,7 +17,7 @@ export default function Navbar (){
 
     return (
             <header>
-                <div className="logo">Logo</div>
+                <div className="logo"><Link to="/">Logo</Link></div>
 
                 <div className="menu-button" onClick={toggleNavHandler}>
                     {isNav ? 
@@ -27,16 +27,16 @@ export default function Navbar (){
 
                 <nav className={isNav ? "navbar active" : "navbar"}>
                     <ul>
-                        <li>Home</li>
+                        <li><Link to="/">Home</Link></li>
                         <li className={isSubmenu1 ? "submenu active" : "submenu"} onClick={submenu1Handler}>
-                            Store
+                            <Link to="/Game">Game</Link>
                             <ul>
-                                <li>Item1</li>
-                                <li>Item2</li>
+                                <li>Car</li>
+                                <li>Ball</li>
                             </ul>
                         </li>
-                        <li>Game</li>
-                        <li>Contact</li>
+                        <li><Link to="/Store">Store</Link></li>
+                        <li><Link to="/Contact">Contact</Link></li>
                     </ul>
                 </nav>
             </header>
